@@ -21,6 +21,15 @@ set('shared_dirs', [
 ]);
 set('allow_anonymous_stats', false);
 
+set('bin/php', function() {
+    return '/opt/php8.0/bin/php';
+});
+
+set('bin/composer', function () {
+    return '/opt/php8.0/bin/php /opt/php8.0/bin/composer.phar';
+});
+
+
 // Hosts
 host('preprod')
     ->setHostname('ftp.cluster003.hosting.ovh.net')
