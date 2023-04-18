@@ -22,7 +22,9 @@ set('shared_dirs', [
 set('allow_anonymous_stats', false);
 
 
-
+task('build', function () {
+    run('cd {{release_path}} && build');
+});
 set('bin/composer', function () {
     return '/opt/php8.0/bin/php /opt/php8.0/bin/composer.phar';
 });
