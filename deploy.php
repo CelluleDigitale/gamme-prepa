@@ -28,7 +28,3 @@ host('preprod')
     ->set('branch', 'develop')
 ;
 
-
-// Hooks
-
-after('deploy:failed', 'deploy:unlock');
