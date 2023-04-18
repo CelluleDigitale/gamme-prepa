@@ -14,8 +14,8 @@ add('writable_dirs', []);
 
 // Hosts
 host('preprod')
-    ->setHostname('ssh.cluster003.hosting.ovh.net')
-    ->setRemoteUser('CelluleDigitale')
+    ->setHostname('ftp.cluster003.hosting.ovh.net')
+    ->setRemoteUser('ibepform-cellule')
     ->set('deploy_path', '~/preprod-prepaprojet')
     ->set('branch', 'develop');
 
