@@ -26,6 +26,7 @@ host('preprod')
     ->setHostname('ftp.cluster003.hosting.ovh.net')
     ->setRemoteUser('ibepform-cellule')
     ->set('deploy_path', '~/preprod-prepaprojet')
+    ->set('writable_mode', 'chmod')
     ->set('branch', 'develop');
 
 
