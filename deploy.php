@@ -10,21 +10,19 @@ set('application', 'gamme-prepa');
 
 set('repository', 'git@github.com:CelluleDigitale/gamme-prepa.git');
 set('http_user', 'ibepform-cellule');
-// Windows Compatibility
+set('git_ssh_command', 'ssh');
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     set('git_tty', false);
     set('ssh_multiplexing', false);
+    set('use_ssh_agent', true);
+    set('git_ssh_command', 'ssh');
 }
 
 set('keep_releases', 3);
 
-set('shared_dirs', [
-    'var/log',
-    'public/uploads',
-]);
-
+add('shared_dirs', [  'var/log',
+'public/uploads',]);
 set('allow_anonymous_stats', false);
-
 
 
 
@@ -35,7 +33,6 @@ host('preprod')
     ->set('deploy_path', '~/landingpage/preprod-prepaprojet')
     ->set('branch', 'develop')
 ;
-
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
