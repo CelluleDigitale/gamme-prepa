@@ -34,16 +34,6 @@ set('bin/composer', function () {
 });
 
 
-
-desc('Compile .env files to improve performance');
-task('deploy:dump-env', function () {
-    run('cd {{release_path}} && {{bin/composer}} dump-env prod');
-});
-
-
-
-
-
 // Hosts
 host('preprod')
     ->setHostname('ftp.cluster003.hosting.ovh.net')
@@ -51,7 +41,7 @@ host('preprod')
     ->set('deploy_path', '~/landingpage/preprod-prepaprojet')
     ->set('branch', 'develop')
 ;
-before('deploy:symlink', 'deploy:dump-env');
+
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
