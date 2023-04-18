@@ -33,3 +33,5 @@ host('preprod')
     ->set('branch', 'develop')
 ;
 
+// [Optional] if deploy fails automatically unlock.
+after('deploy:failed', 'deploy:unlock');
