@@ -3,6 +3,9 @@ namespace Deployer;
 
 require 'recipe/symfony.php';
 
+// Project name
+set('application', 'gamme-prepa');
+
 // Project repository
 set('repository', 'git@github.com:CelluleDigitale/gamme-prepa.git');
 set('http_user', 'ibepform-cellule');
