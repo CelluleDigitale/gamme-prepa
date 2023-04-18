@@ -1,39 +1,29 @@
 <?php
+
 namespace Deployer;
 
 require 'recipe/symfony.php';
 
-// Project name
-set('application', 'gamme-prepa');
+// Config
 
-// Project repository
 set('repository', 'git@github.com:CelluleDigitale/gamme-prepa.git');
-set('http_user', 'ibepform-cellule');
-set('ssh_multiplexing', false);
-set('use_ssh_agent', true);
 
-if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    set('git_tty', false);
-    set('ssh_multiplexing', false);
-    set('use_ssh_agent', true);
-    set('git_ssh_command', 'ssh');
-}
-
-set('keep_releases', 3);
-
-add('shared_dirs', [  'var/log',
-'public/uploads',]);
-set('allow_anonymous_stats', false);
-
-
+add('shared_files', []);
+add('shared_dirs', []);
+add('writable_dirs', []);
 
 // Hosts
 host('preprod')
-    ->setHostname('ftp.cluster003.hosting.ovh.net')
+    ->setHostname('ssh.cluster003.hosting.ovh.net')
     ->setRemoteUser('ibepform-cellule')
-    ->set('deploy_path', '~/landingpage/preprod-prepaprojet')
-    ->set('branch', 'develop')
-;
+    ->set('deploy_path', '~/preprod-prepaprojet')
+    ->set('branch', 'develop');
 
-// [Optional] if deploy fails automatically unlock.
+// Tasks
+
+task('build', function () {
+    cd('{{release_path}}');
+    run('npm run build');
+});
+
 after('deploy:failed', 'deploy:unlock');
