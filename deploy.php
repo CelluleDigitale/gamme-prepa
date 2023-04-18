@@ -7,10 +7,14 @@ require 'recipe/symfony.php';
 // Config
 
 set('repository', 'git@github.com:CelluleDigitale/gamme-prepa.git');
+set('http_user', 'ibepform-cellule');
 
-add('shared_files', []);
-add('shared_dirs', []);
-add('writable_dirs', []);
+set('keep_releases', 3);
+
+set('shared_dirs', [
+    'var/log',
+    'public/uploads',
+]);
 
 // Hosts
 host('preprod')
@@ -19,11 +23,6 @@ host('preprod')
     ->set('deploy_path', '~/preprod-prepaprojet')
     ->set('branch', 'develop');
 
-// Tasks
 
-task('build', function () {
-    cd('{{release_path}}');
-    run('npm run build');
-});
 
 after('deploy:failed', 'deploy:unlock');
