@@ -7,10 +7,11 @@ require 'recipe/symfony.php';
 set('application', 'gamme-prepa');
 
 // Project repository
-
 set('repository', 'git@github.com:CelluleDigitale/gamme-prepa.git');
 set('http_user', 'ibepform-cellule');
-set('git_ssh_command', 'ssh');
+set('ssh_multiplexing', false);
+set('use_ssh_agent', true);
+
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     set('git_tty', false);
     set('ssh_multiplexing', false);
