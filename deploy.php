@@ -22,9 +22,6 @@ set('shared_dirs', [
 set('allow_anonymous_stats', false);
 
 
-
-
-
 desc('Compile .env files to improve performance');
 task('deploy:dump-env', function () {
     run('cd {{release_path}} && {{bin/composer}} dump-env prod');
