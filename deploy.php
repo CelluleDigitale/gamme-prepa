@@ -34,11 +34,6 @@ set('bin/composer', function () {
 });
 
 
-// Tâches customs
-desc('View migrations\'s status');
-task('database:status', function () {
-    run("cd {{release_or_current_path}} && {{bin/console}} doctrine:migrations:status {{console_options}}");
-});
 
 desc('Compile .env files to improve performance');
 task('deploy:dump-env', function () {
