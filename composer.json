@@ -94,7 +94,7 @@
         }
     },
     "require-dev": {
-        "deployer/deployer": "^7.3",
+        "deployer/deployer": "7.0.0-rc.4",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.4.*",
         "symfony/css-selector": "5.4.*",
