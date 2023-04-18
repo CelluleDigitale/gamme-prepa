@@ -23,9 +23,7 @@ set('allow_anonymous_stats', false);
 
 
 
-set('bin/composer', function () {
-    return '/opt/php8.0/bin/php /opt/php8.0/bin/composer.phar';
-});
+
 
 desc('Compile .env files to improve performance');
 task('deploy:dump-env', function () {
