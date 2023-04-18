@@ -34,7 +34,7 @@ task('deploy:dump-env', function () {
 
 // Hosts
 host('preprod')
-    ->setHostname('ftp.cluster003.hosting.ovh.net')
+    ->setHostname('ssh.cluster003.hosting.ovh.net')
     ->setRemoteUser('ibepform-cellule')
     ->set('deploy_path', '~/preprod-prepaprojet')
     ->set('writable_mode', 'chmod')
