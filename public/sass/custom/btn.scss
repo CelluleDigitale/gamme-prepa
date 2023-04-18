@@ -1,0 +1,70 @@
+a {
+  color: #070723;
+  text-decoration: none;
+  background-color: transparent;
+}
+.btn-primary {
+  padding: 12px 55px 12px 20px;
+  background-color: #93b28e;
+  color: #ffffff;
+  line-height: calc(21 / 16);
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.2s ease-in;
+  border: 1px solid #93b28e;
+  display: inline-block;
+  cursor: pointer;
+
+  span {
+    height: 36px;
+    width: 36px;
+    background-color: #769272;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(calc(50% - 4px), -50%);
+      background-color: #ffffff;
+      width: 10px;
+      height: 1px;
+      opacity: 0;
+      transition: all 0.2s ease-in 0.1s;
+    }
+    &::after {
+      content: "";
+      background-image: url("../img/btn/chevron-right.svg");
+      background-size: contain;
+      height: 15px;
+      width: 15px;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      background-repeat: no-repeat;
+      transition: all 0.2s ease-in;
+    }
+  }
+  &:hover {
+    color: #93b28e;
+    transform: translateY(-2px);
+    box-shadow: 16px 16px 32px rgba(7, 7, 35, 0.1);
+    background-color: #fff;
+    border: 1px solid #93b28e;
+    text-decoration: none;
+
+    span::before {
+      transform: translate(calc(50% - 2px), -50%);
+      opacity: 1;
+    }
+
+    span::after {
+      transform: translate(calc(50% + 2px), -50%);
+    }
+  }
+}

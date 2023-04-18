@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+    &.list{
+        li::before {
+            content: "";
+            background-image: url("../img/btn/check-circle-fill.svg");
+            background-size: contain;
+            height: 20px;
+            background-repeat: no-repeat;
+            width: 1em;
+            margin-left: -23px;
+            float: left;
+            margin-top: 5px;
+        }
+    }
+}
+
