@@ -15,7 +15,7 @@ if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     set('git_tty', false);
     set('ssh_multiplexing', false);
     set('use_ssh_agent', true);
-    set('git_ssh_command', true);
+    set('git_ssh_command', 'ssh');
 }
 
 set('keep_releases', 3);
