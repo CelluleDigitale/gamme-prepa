@@ -27,6 +27,10 @@ set('bin/composer', function () {
     return '/opt/php8.0/bin/php /opt/php8.0/bin/composer.phar';
 });
 
+desc('Compile .env files to improve performance');
+task('deploy:dump-env', function () {
+    run('cd {{release_path}} && {{bin/composer}} dump-env prod');
+});
 
 // Hosts
 host('preprod')
@@ -36,6 +40,6 @@ host('preprod')
     ->set('writable_mode', 'chmod')
     ->set('branch', 'develop');
 
-
+    before('deploy:symlink', 'deploy:dump-env');
 
 after('deploy:failed', 'deploy:unlock');
