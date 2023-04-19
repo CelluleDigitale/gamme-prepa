@@ -44,7 +44,7 @@ task('deploy:dump-env', function () {
 
 // Hosts
 host('preprod')
-    ->setHostname('sg1jx.ftp.infomaniak.com')
+    ->setHostname('7q4jv.ftp.infomaniak.com')
     ->setRemoteUser('7q4jv_ibep-e-formation')
     ->set('deploy_path', '~/landingpage/preprod-prepaprojet')
     ->set('writable_mode', 'chmod')
