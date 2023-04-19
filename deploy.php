@@ -31,9 +31,7 @@ set('bin/php', function () {
     return '/usr/local/php7.4/bin/php';
 });
 
-set('bin/composer', function () {
-    return '/usr/local/php7.4/bin/php /opt/php8.0/bin/composer.phar';
-});
+
 
 desc('Compile .env files to improve performance');
 task('deploy:dump-env', function () {
