@@ -32,7 +32,7 @@ set('bin/php', function () {
 });
 
 set('bin/composer', function () {
-    return '/usr/local/php7.4/bin/php /usr/local/php7.4/bin/composer.phar';
+    return '/usr/local/php7.4/bin/php /usr/local/bin/composer.phar';
 });
 
 desc('Compile .env files to improve performance');
@@ -44,7 +44,7 @@ task('deploy:dump-env', function () {
 host('preprod')
     ->setHostname('ssh.cluster003.hosting.ovh.net')
     ->setRemoteUser('ibepform-cellule')
-    ->set('deploy_path', '~/preprod-prepaprojet')
+    ->set('deploy_path', '~/landingpage/preprod-prepaprojet')
     ->set('writable_mode', 'chmod')
     ->set('branch', 'develop');
 
