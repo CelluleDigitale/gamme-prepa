@@ -28,7 +28,7 @@ task('build', function () {
 
 
 set('bin/php', function () {
-    return '/opt/php74/bin/php';
+    return '/usr/local/php7.4/bin/php';
 });
 
 desc('Compile .env files to improve performance');
