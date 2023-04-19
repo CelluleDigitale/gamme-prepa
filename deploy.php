@@ -28,11 +28,11 @@ task('build', function () {
 
 
 set('bin/php', function() {
-    return '/opt/php8.0/bin/php';
+    return '/usr/bin/php /opt/php8.1/bin/php /usr/share/man/man1/php.1';
 });
 
 set('bin/composer', function () {
-    return '/opt/php8.0/bin/php /opt/php8.0/bin/composer.phar';
+    return '/usr/bin/composer /opt/php8.1/bin/composer1.phar /opt/php8.1/bin/composer2.phar /opt/php8.1/bin/composer';
 });
 
 
