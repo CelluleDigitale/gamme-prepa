@@ -26,8 +26,10 @@ task('build', function () {
     run('cd {{release_path}} && build');
 });
 
-set('bin/php', 'php');
-set('bin/composer', 'composer');
+
+set('bin/php', function () {
+    return '/opt/php74/bin/php';
+});
 
 desc('Compile .env files to improve performance');
 task('deploy:dump-env', function () {
