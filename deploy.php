@@ -32,7 +32,7 @@ set('bin/php', function () {
 });
 
 set('bin/composer', function () {
-    return '/usr/local/php7.4/bin/php /usr/local/bin/composer.phar';
+    return '/usr/local/php7.4/bin/php /opt/php8.0/bin/composer.phar';
 });
 
 desc('Compile .env files to improve performance');
