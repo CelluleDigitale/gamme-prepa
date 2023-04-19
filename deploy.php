@@ -7,7 +7,7 @@ require 'recipe/symfony.php';
 // Config
 
 set('repository', 'git@github.com:CelluleDigitale/gamme-prepa.git');
-set('http_user', 'ibepform-cellule');
+set('http_user', 'sg1jx_fgras');
 
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     set('git_tty', false);
@@ -27,8 +27,12 @@ task('build', function () {
 });
 
 
-set('bin/php', function () {
-    return '/usr/local/php7.4/bin/php';
+set('bin/php', function() {
+    return '/opt/php8.0/bin/php';
+});
+
+set('bin/composer', function () {
+    return '/opt/php8.0/bin/php /opt/php8.0/bin/composer.phar';
 });
 
 
@@ -40,8 +44,8 @@ task('deploy:dump-env', function () {
 
 // Hosts
 host('preprod')
-    ->setHostname('ssh.cluster003.hosting.ovh.net')
-    ->setRemoteUser('ibepform-cellule')
+    ->setHostname('sg1jx.ftp.infomaniak.com')
+    ->setRemoteUser('sg1jx_fgras')
     ->set('deploy_path', '~/landingpage/preprod-prepaprojet')
     ->set('writable_mode', 'chmod')
     ->set('branch', 'develop');
