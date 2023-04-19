@@ -7,7 +7,7 @@ require 'recipe/symfony.php';
 // Config
 
 set('repository', 'git@github.com:CelluleDigitale/gamme-prepa.git');
-set('http_user', 'sg1jx_fgras');
+set('http_user', '7q4jv_ibep-e-formation');
 
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     set('git_tty', false);
@@ -45,7 +45,7 @@ task('deploy:dump-env', function () {
 // Hosts
 host('preprod')
     ->setHostname('sg1jx.ftp.infomaniak.com')
-    ->setRemoteUser('sg1jx_fgras')
+    ->setRemoteUser('7q4jv_ibep-e-formation')
     ->set('deploy_path', '~/landingpage/preprod-prepaprojet')
     ->set('writable_mode', 'chmod')
     ->set('branch', 'develop');
