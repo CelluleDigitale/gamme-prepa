@@ -48,11 +48,11 @@ class LandingPageController extends AbstractController
         $phone = $request->get("form")['phone'];
         
         if ($sites == "Brest" || $sites == "Pont-de-Buis") {
-            $email = 'ibep.brest@yopmail.com';
+            $email = 'ibep.brest@ibepformation.fr';
         } else if ($sites == "Concarneau" || $sites == "Douarnenez" || $sites == "Pont-l\'Abbé") {
-            $email = 'ibep.quimper@yopmail.com';
+            $email = 'ibep.quimper@ibepformation.fr';
         } else {
-            $email = 'ibep.lorient@yopmail.com';
+            $email = 'ibep.lorient@ibepformation.fr';
         }
         // On génère l'e-mail
    
