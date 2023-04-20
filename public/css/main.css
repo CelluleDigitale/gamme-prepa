@@ -11222,7 +11222,6 @@ ul.tab {
   justify-content: center;
   list-style: none;
   padding: 0;
-  border-bottom: 1px solid #e5e5e8;
   margin: 0 0 30px;
   text-transform: uppercase;
   font-weight: 600;
@@ -11248,10 +11247,19 @@ li.tab-item.active {
   display: none;
 }
 
-.p-6 {
-  padding: 6rem !important;
+@media only screen and (min-width: 768px) {
+  .p-6 {
+    padding: 6rem !important;
+  }
+  ul.tab {
+    border-bottom: 1px solid #e5e5e8;
+  }
 }
-
+@media only screen and (max-width: 768px) {
+  li.tab-item {
+    margin-bottom: 15px;
+  }
+}
 .formbg {
   background-color: #fff;
   border-radius: 4px;
@@ -11346,6 +11354,9 @@ li.tab-item.active {
 @media only screen and (max-width: 768px) {
   .field.field-50 {
     width: 100%;
+  }
+  .form > .order-md-2 {
+    order: 1 !important;
   }
 }
 
